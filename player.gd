@@ -10,3 +10,7 @@ func _physics_process(delta):
 	if velocity.x > 0:
 		$Sprite.flip_h = false
 	velocity = move_and_slide(velocity.normalized() * speed)
+
+
+func _on_Area2D_area_entered(area):
+	print("Fuck")
