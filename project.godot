@@ -19,6 +19,10 @@ config/name="kowai-neko"
 run/main_scene="res://game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStats="*res://player_stats.tscn"
+
 [display]
 
 window/size/width=1280

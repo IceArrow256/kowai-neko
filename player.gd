@@ -12,5 +12,6 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity.normalized() * speed)
 
 
-func _on_Area2D_area_entered(area):
-	print("Fuck")
+func _on_Area2D_area_entered(area: Area2D):
+	PlayerStats.score += 1
+	area.queue_free()
