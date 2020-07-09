@@ -4,9 +4,10 @@ var stats = PlayerStats
 
 func _ready():
 	stats.connect("won", self, "finish_game")
+	stats.connect("score_changed", $GUI, "change_score")
 
 func finish_game():
-	$CanvasLayer/CenterContainer/WindowDialog.popup()
+	$GUI/CenterContainer/WindowDialog.popup()
 	get_tree().paused = true
 	print("You win!")
 

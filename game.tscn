@@ -4,7 +4,7 @@
 [ext_resource path="res://player.gd" type="Script" id=2]
 [ext_resource path="res://flower_spawner.gd" type="Script" id=3]
 [ext_resource path="res://game.gd" type="Script" id=4]
-[ext_resource path="res://canvas_layer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gui.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 50.0
@@ -43,8 +43,8 @@ script = ExtResource( 3 )
 [node name="Timer" type="Timer" parent="FlowerSpawner"]
 autostart = true
 
-[node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
+[node name="GUI" parent="." instance=ExtResource( 5 )]
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="FlowerSpawner/Timer" to="FlowerSpawner" method="_on_Timer_timeout"]
-[connection signal="exit_button_pressed" from="CanvasLayer" to="." method="_on_CanvasLayer_exit_button_pressed"]
-[connection signal="restart_button_pressed" from="CanvasLayer" to="." method="_on_CanvasLayer_restart_button_pressed"]
+[connection signal="exit_button_pressed" from="GUI" to="." method="_on_CanvasLayer_exit_button_pressed"]
+[connection signal="restart_button_pressed" from="GUI" to="." method="_on_CanvasLayer_restart_button_pressed"]

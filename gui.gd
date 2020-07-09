@@ -11,3 +11,6 @@ func _on_ButtonExit_button_down():
 
 func _on_WindowDialog_popup_hide():
 	emit_signal("restart_button_pressed")
+	
+func change_score(score: int):
+	$GridContainer/ProgressBar.value = score
