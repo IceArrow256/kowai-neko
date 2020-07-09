@@ -14,4 +14,5 @@ func _physics_process(delta):
 
 func _on_Area2D_area_entered(area: Area2D):
 	PlayerStats.score += 1
+	$AudioStreamPlayer2D.play()
 	area.queue_free()
