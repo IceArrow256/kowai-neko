@@ -1,10 +1,19 @@
 extends Node2D
 
 var stats = PlayerStats
+var rng = RandomNumberGenerator.new()
+onready var backgound_music = [preload("res://background_music0.wav"),
+							   preload("res://background_music1.wav"),
+							   preload("res://background_music2.wav")] 
+
 
 func _ready():
+	rng.randomize()
+	$AudioStreamPlayer.stream = backgound_music[rng.randi_range(0, 2)]
+	$AudioStreamPlayer.play()
 	stats.connect("won", self, "finish_game")
 	stats.connect("score_changed", $GUI, "change_score")
+	
 
 func finish_game():
 	$GUI/CenterContainer/WindowDialog.popup()
