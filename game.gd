@@ -33,5 +33,4 @@ func _on_CanvasLayer_restart_button_pressed():
 
 func _on_Timer_timeout():
 	rng.randomize()
-	print("Fuck")
-	$Sprite.modulate = Color(rng.randf_range(0, 1), rng.randf_range(0, 1) ,rng.randf_range(0, 1), 1)
+	$Backgrounds.modulate = Color(rng.randf_range(0, 1), rng.randf_range(0, 1) ,rng.randf_range(0, 1), 1)
