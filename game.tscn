@@ -18,6 +18,10 @@ height = 19.0
 pause_mode = 2
 script = ExtResource( 4 )
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.125
+autostart = true
+
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 7 )
 centered = false
@@ -60,6 +64,7 @@ script = ExtResource( 3 )
 autostart = true
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="FlowerSpawner/Timer" to="FlowerSpawner" method="_on_Timer_timeout"]
 [connection signal="exit_button_pressed" from="GUI" to="." method="_on_CanvasLayer_exit_button_pressed"]

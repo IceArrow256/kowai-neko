@@ -29,3 +29,9 @@ func _on_CanvasLayer_restart_button_pressed():
 	get_tree().reload_current_scene()
 	PlayerStats.score = 0
 	get_tree().paused = false
+
+
+func _on_Timer_timeout():
+	rng.randomize()
+	print("Fuck")
+	$Sprite.modulate = Color(rng.randf_range(0, 1), rng.randf_range(0, 1) ,rng.randf_range(0, 1), 1)
